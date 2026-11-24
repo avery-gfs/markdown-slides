@@ -125,7 +125,7 @@ body {
   margin: 0;
   padding: 0;
   list-style: none;
-  font: 15px/1.7 ui-monospace, SFMono-Regular, Menlo, monospace;
+  font: 16px/1.7 ui-monospace, SFMono-Regular, Menlo, monospace;
 }
 
 .decks .decks {
