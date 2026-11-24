@@ -1,0 +1,155 @@
+/* Styles for the page around the slides: the link picker and the contents
+   listing, in one centred column. The deck itself is themed by slides.css,
+   which is only loaded once there's a deck to show. */
+
+:root {
+  color-scheme: light;
+
+  --bg: #fff;
+  --fg: #333;
+  --muted: #6a6a6a;
+  --accent: #1a56b8;
+  --error: #b3261e;
+  --warn: #8a5a00;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* reveal's reset.css, loaded with a deck, gives elements like <main> an
+   explicit display that would otherwise beat the hidden attribute. */
+[hidden] {
+  display: none !important;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+}
+
+.panel {
+  max-width: 40rem;
+  margin: 4rem auto;
+  padding: 0 1.5rem;
+  font: 16px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+.panel h1 {
+  margin: 0 0 0.75rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.panel a {
+  color: var(--accent);
+}
+
+.panel a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.message {
+  margin-bottom: 2.5rem;
+}
+
+.message:not([hidden]) + .picker h1 {
+  display: none;
+}
+
+/* Picker ------------------------------------------------------------------ */
+
+.picker label {
+  display: block;
+  margin-bottom: 0.4rem;
+}
+
+.picker .row {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.picker input[type="text"],
+.picker button {
+  font: inherit;
+  padding: 0.35rem 0.6rem;
+  border: 1px solid #999;
+  border-radius: 4px;
+  background: var(--bg);
+  color: inherit;
+}
+
+.picker input[type="text"] {
+  flex: 1;
+  min-width: 0;
+}
+
+.picker button {
+  cursor: pointer;
+}
+
+.picker .file input {
+  display: block;
+  margin-top: 0.4rem;
+  font: inherit;
+}
+
+.picker .hint {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.picker .hint code {
+  white-space: nowrap;
+}
+
+/* Contents ---------------------------------------------------------------- */
+
+.crumbs {
+  overflow-wrap: anywhere;
+}
+
+.crumbs a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.crumbs a:hover {
+  text-decoration: underline;
+}
+
+.decks {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font: 15px/1.7 ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+.decks .decks {
+  padding-left: 2ch;
+}
+
+.folder {
+  color: var(--muted);
+}
+
+.status {
+  color: var(--muted);
+}
+
+.freshness {
+  margin-top: 1.5rem;
+  color: var(--warn);
+}
+
+.freshness:empty {
+  display: none;
+}
+
+.picker.dragging {
+  outline: 2px dashed var(--accent);
+  outline-offset: 1rem;
+}

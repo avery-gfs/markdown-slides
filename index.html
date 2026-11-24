@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Slides</title>
+    <link rel="stylesheet" href="app/site.css" />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y=".9em" font-size="90">🖥️</text></svg>'
+    >
+  </head>
+
+  <body>
+    <main class="panel" id="panel">
+      <div class="message" id="message" hidden></div>
+
+      <form class="picker" id="picker" hidden>
+        <h1>Slides</h1>
+        <label for="src-input">
+          Link to a GitHub repo or folder, or to a markdown file
+        </label>
+        <div class="row">
+          <input
+            id="src-input"
+            type="text"
+            placeholder="https://github.com/owner/repo"
+            autocomplete="off"
+            spellcheck="false"
+          />
+          <button type="submit">Open</button>
+        </div>
+        <label class="file">
+          or choose a markdown file on this computer
+          <input
+            id="file-input"
+            type="file"
+            accept=".md,.markdown,text/markdown,text/plain"
+          />
+        </label>
+        <p class="hint">
+          A repo or folder lists its readmes; a file opens as slides. You can
+          also drop a markdown file on this page.
+        </p>
+      </form>
+
+      <div id="outline" aria-live="polite"></div>
+      <p class="freshness" id="freshness"></p>
+    </main>
+
+    <nav class="deck-bar" hidden>
+      <a class="back" id="back" href="./">&larr;&nbsp;Open another</a>
+    </nav>
+
+    <div class="reveal" hidden>
+      <div class="slides" id="slides"></div>
+    </div>
+
+    <script type="module" src="app/main.js"></script>
+  </body>
+</html>
