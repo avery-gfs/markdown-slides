@@ -3,7 +3,7 @@
 Renders markdown as reveal.js decks, entirely in the browser: documents and
 images are fetched straight from where they live, with no server or build step.
 
-Published at <https://avery-gfs.github.io/slides/>.
+Published at <https://avery-gfs.github.io/readme-slides/>.
 
 ## Usage
 
